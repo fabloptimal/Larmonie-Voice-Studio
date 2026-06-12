@@ -5,6 +5,46 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Larmonie Voice Studio — Accueil téléphonique &amp; voix-off professionnelles</title>
 <meta name="description" content="Larmonie Voice Studio : accueil téléphonique externalisé, messages d'attente personnalisés, voix-off professionnelles et gestion de la relation client. Votre message, porté par la bonne voix.">
+<link rel="canonical" href="https://fabloptimal.github.io/Larmonie-Voice-Studio/">
+<link rel="icon" type="image/x-icon" href="favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://fabloptimal.github.io/Larmonie-Voice-Studio/">
+<meta property="og:site_name" content="Larmonie Voice Studio">
+<meta property="og:title" content="Larmonie Voice Studio — Accueil téléphonique &amp; voix-off professionnelles">
+<meta property="og:description" content="Accueil téléphonique externalisé, messages d'attente personnalisés et voix-off professionnelles. Votre message, porté par la bonne voix.">
+<meta property="og:image" content="https://fabloptimal.github.io/Larmonie-Voice-Studio/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="fr_FR">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Larmonie Voice Studio — Accueil téléphonique &amp; voix-off">
+<meta name="twitter:description" content="Accueil téléphonique externalisé, messages d'attente et voix-off professionnelles.">
+<meta name="twitter:image" content="https://fabloptimal.github.io/Larmonie-Voice-Studio/og-image.jpg">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "Larmonie Voice Studio",
+  "slogan": "Votre message, porté par la bonne voix.",
+  "url": "https://fabloptimal.github.io/Larmonie-Voice-Studio/",
+  "image": "https://fabloptimal.github.io/Larmonie-Voice-Studio/og-image.jpg",
+  "email": "HARMONIE.HPS@gmail.com",
+  "founder": { "@type": "Person", "name": "Fabrice Larmonie" },
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "76 Grande Rue",
+    "postalCode": "77410",
+    "addressLocality": "Villevaudé",
+    "addressCountry": "FR"
+  },
+  "areaServed": "FR",
+  "description": "Accueil téléphonique externalisé, standard externalisé, messages d'attente personnalisés, voix-off professionnelles, gestion des appels entrants et service client premium.",
+  "knowsAbout": ["Accueil téléphonique externalisé","Voix-off professionnelle","Messages d'attente téléphonique","Service client"]
+}
+</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Jost:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
@@ -458,7 +498,7 @@ footer{background:#071629;color:#8fa0bb;padding:3.5rem 0 2rem;font-size:.9rem}
         </div>
         <div class="coord-item">
           <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><path d="M22 6 12 13 2 6"/></svg>
-          <span>contact@larmonievoicestudio.fr</span>
+          <span>HARMONIE.HPS@gmail.com</span>
         </div>
         <div class="coord-item">
           <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
@@ -569,7 +609,7 @@ document.getElementById('contactForm').addEventListener('submit', e => {
   const d = new FormData(f);
   const corps = `Nom : ${d.get('nom')}%0ASociété : ${d.get('societe') || '-'}%0ATéléphone : ${d.get('telephone')}%0AE-mail : ${d.get('email')}%0A%0A${encodeURIComponent(d.get('message'))}`;
   document.getElementById('formSuccess').style.display = 'block';
-  location.href = `mailto:contact@larmonievoicestudio.fr?subject=Demande de devis — Larmonie Voice Studio&body=${corps}`;
+  location.href = `mailto:HARMONIE.HPS@gmail.com?subject=Demande de devis — Larmonie Voice Studio&body=${corps}`;
 });
 </script>
 </body>
