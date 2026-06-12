@@ -230,25 +230,6 @@ header.scrolled{
   color:#eef2f8;font-size:.9rem;letter-spacing:.04em;
 }
 
-/* ---------- Témoignages ---------- */
-.temoignages{background:var(--blanc);text-align:center}
-.carousel{max-width:760px;margin-inline:auto;position:relative;min-height:240px}
-.slide{
-  position:absolute;inset:0;opacity:0;transform:translateY(14px);
-  transition:opacity .6s ease,transform .6s ease;pointer-events:none;
-  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1.4rem;
-  padding:0 1rem;
-}
-.slide.active{opacity:1;transform:none;pointer-events:auto}
-.slide blockquote{
-  font-family:'Marcellus',serif;font-size:clamp(1.3rem,2.6vw,1.8rem);color:var(--bleu-profond);
-}
-.slide cite{font-style:normal;color:var(--texte-doux);font-size:.92rem;letter-spacing:.1em;text-transform:uppercase}
-.slide .wave{height:22px;justify-content:center}
-.dots{display:flex;gap:.6rem;justify-content:center;margin-top:1.5rem}
-.dot{width:9px;height:9px;border-radius:50%;background:var(--argent-clair);border:0;cursor:pointer;transition:.3s}
-.dot.active{background:var(--bleu-royal);transform:scale(1.25)}
-
 /* ---------- Contact ---------- */
 .contact{background:linear-gradient(160deg,var(--bleu-nuit) 0%,var(--bleu-profond) 100%);color:#fff}
 .contact .eyebrow{color:var(--argent)}
@@ -334,7 +315,6 @@ footer{background:#071629;color:#8fa0bb;padding:3.5rem 0 2rem;font-size:.9rem}
       <li><a href="#services">Services</a></li>
       <li><a href="#pourquoi">Pourquoi nous</a></li>
       <li><a href="#galerie">Galerie</a></li>
-      <li><a href="#temoignages">Témoignages</a></li>
       <li><a href="#contact" class="nav-cta">Demander un devis</a></li>
     </ul>
   </div>
@@ -450,36 +430,7 @@ footer{background:#071629;color:#8fa0bb;padding:3.5rem 0 2rem;font-size:.9rem}
 </section>
 
 <!-- ============ TÉMOIGNAGES ============ -->
-<section class="temoignages" id="temoignages">
-  <div class="container">
-    <div class="section-head reveal" style="margin-inline:auto;text-align:center">
-      <span class="eyebrow" style="justify-content:center">Témoignages</span>
-      <h2>Ils nous confient leur voix</h2>
-    </div>
-    <div class="carousel reveal" id="carousel" aria-live="polite">
-      <div class="slide active">
-        <div class="wave" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
-        <blockquote>« Un accueil téléphonique irréprochable. »</blockquote>
-        <cite>Direction générale — cabinet de conseil</cite>
-      </div>
-      <div class="slide">
-        <div class="wave" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
-        <blockquote>« Nos clients apprécient la qualité des messages d'attente. »</blockquote>
-        <cite>Responsable communication — groupe immobilier</cite>
-      </div>
-      <div class="slide">
-        <div class="wave" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
-        <blockquote>« Une véritable valeur ajoutée pour notre image. »</blockquote>
-        <cite>Dirigeante — maison de services haut de gamme</cite>
-      </div>
-    </div>
-    <div class="dots" id="dots" role="tablist" aria-label="Témoignages">
-      <button class="dot active" aria-label="Témoignage 1"></button>
-      <button class="dot" aria-label="Témoignage 2"></button>
-      <button class="dot" aria-label="Témoignage 3"></button>
-    </div>
-  </div>
-</section>
+
 
 <!-- ============ CONTACT ============ -->
 <section class="contact" id="contact">
@@ -584,20 +535,6 @@ const io = new IntersectionObserver(entries => {
 }, {threshold:.12});
 document.querySelectorAll('.reveal').forEach(el => io.observe(el));
 
-// Carousel témoignages
-const slides = [...document.querySelectorAll('.slide')];
-const dots = [...document.querySelectorAll('.dot')];
-let current = 0, timer;
-function show(i){
-  slides[current].classList.remove('active');
-  dots[current].classList.remove('active');
-  current = (i + slides.length) % slides.length;
-  slides[current].classList.add('active');
-  dots[current].classList.add('active');
-}
-function autoplay(){ timer = setInterval(() => show(current + 1), 6000); }
-dots.forEach((d, i) => d.addEventListener('click', () => { clearInterval(timer); show(i); autoplay(); }));
-autoplay();
 
 // Formulaire — ouvre la messagerie avec le contenu prérempli.
 // Pour un envoi serveur sans backend : remplacer ce handler par une action Formspree
